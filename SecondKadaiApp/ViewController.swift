@@ -26,19 +26,16 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // segueから遷移先のResultViewControllerを取得する
         let resultViewController:ResultViewController = segue.destination as! ResultViewController
-    
+        // 遷移先のResultViewControllerで宣言している値を代入して渡す
+        resultViewController.name = name.text!
+    }
     
     @IBAction func unwind(segue: UIStoryboardSegue) {
     }
 
-    weak var name: UITextField! {
-        
-        // UITextFieldを作成する.
-        name = UITextField(frame: CGRectMake(0,0,200,30))
-        // 表示する文字を代入する.
-        name.text = "文字を入力してください"
-        name.text!
-    }
+    @IBOutlet weak var name: UITextField!
+
+
     
 }
 
